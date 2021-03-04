@@ -1,0 +1,26 @@
+<h3><a class="btn btn-secondary" href="/enquete"><i class="fa fa-plus"></i> Create New</a> Enquete List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>enqueteurname</th>
+            <th>Email</th>
+            <th>datedebut</th>
+            <th>datefin</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.enqueteurname}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.datedebut}}</td>
+            <td>{{this.datefin}}</td>
+            <td>
+                <a href="/enquete/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/enquete/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

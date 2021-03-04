@@ -1,0 +1,31 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/enquete" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{enquete._id}}">
+    <div class="form-group">
+        <label>enqueteurname</label>
+        <input type="text" class="form-control" name="enqueteurname" placeholder="enqueteurname" value="{{enquete.enqueteurname}}">
+        <div class="text-danger">
+            {{enquete.enqueteurnameError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Email" value="{{enquete.email}}">
+        <div class="text-danger">
+            {{enquete.emailError}}</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>datedebut</label>
+            <input type="text" class="form-control" name="datedebut" placeholder="datedebut" value="{{enquete.datedebut}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>datefin</label>
+            <input type="text" class="form-control" name="datefin" placeholder="datefin" value="{{enquete.datefin}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/enquete/list"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+</form>
